@@ -130,34 +130,33 @@ Goto Manage Jenkins →Plugins → Available Plugins →
 
 Install below plugins
 
-1 Eclipse Temurin Installer (Install without restart)
+    Eclipse Temurin Installer
 
-2 SonarQube Scanner (Install without restart)
+    SonarQube Scanner
 
-3 NodeJs Plugin (Install Without restart)
+    NodeJs Plugin
 
-4 Email Extension Plugin
+    Email Extension Plugin
 
 ### **Configure Java and Nodejs in Global Tool Configuration**
 
-Goto Manage Jenkins → Tools → Install JDK(17) and NodeJs(16)→ Click on Apply and Save
+Go to Manage Jenkins 
+    → Tools 
+        → Install jdk21 and node16
+            → Click on Apply and Save
 
 
 ### SonarQube
 
 Create the token
 
-Goto Jenkins Dashboard → Manage Jenkins → Credentials → Add Secret Text. It should look like this
-
-After adding sonar token
-
-Click on Apply and Save
-
-**The Configure System option** is used in Jenkins to configure different server
-
-**Global Tool Configuration** is used to configure different tools that we install using Plugins
-
-We will install a sonar scanner in the tools.
+Goto Jenkins Dashboard 
+    → Manage Jenkins 
+        → Credentials 
+            → System
+                → Global
+                    → Add Secret Text  
+                        → Secret = sqa_c054b6b34253271d5b8431cb79caa870044a3552 ID= sonar-token
 
 Create a Jenkins webhook
 
@@ -168,7 +167,7 @@ Create a Jenkins webhook
 pipeline {
     agent any
     tools {
-        jdk 'jdk17'
+        jdk 'jdk21'
         nodejs 'node16'
     }
     environment {
@@ -216,14 +215,17 @@ Certainly, here are the instructions without step numbers:
 **Install Dependency-Check Plugin:**
 
 - Go to "Dashboard" in your Jenkins web interface.
-- Navigate to "Manage Jenkins" → "Manage Plugins."
+- Navigate to "Manage Jenkins" 
+    → "Manage Plugins."
 - Click on the "Available" tab and search for "OWASP Dependency-Check."
 - Check the checkbox for "OWASP Dependency-Check" and click on the "Install without restart" button.
 
 **Configure Dependency-Check Tool:**
 
 - After installing the Dependency-Check plugin, you need to configure the tool.
-- Go to "Dashboard" → "Manage Jenkins" → "Global Tool Configuration."
+- Go to "Dashboard"    
+    → "Manage Jenkins" 
+        → "Global Tool Configuration."
 - Find the section for "OWASP Dependency-Check."
 - Add the tool's name, e.g., "DP-Check."
 - Save your settings.
@@ -231,7 +233,8 @@ Certainly, here are the instructions without step numbers:
 **Install Docker Tools and Docker Plugins:**
 
 - Go to "Dashboard" in your Jenkins web interface.
-- Navigate to "Manage Jenkins" → "Manage Plugins."
+- Navigate to "Manage Jenkins" 
+    → "Manage Plugins."
 - Click on the "Available" tab and search for "Docker."
 - Check the following Docker-related plugins:
   - Docker
@@ -244,7 +247,9 @@ Certainly, here are the instructions without step numbers:
 **Add DockerHub Credentials:**
 
 - To securely handle DockerHub credentials in your Jenkins pipeline, follow these steps:
-  - Go to "Dashboard" → "Manage Jenkins" → "Manage Credentials."
+  - Go to "Dashboard" 
+    → "Manage Jenkins" 
+        → "Manage Credentials."
   - Click on "System" and then "Global credentials (unrestricted)."
   - Click on "Add Credentials" on the left side.
   - Choose "Secret text" as the kind of credentials.
