@@ -109,7 +109,8 @@ docker run -d --name netflix -p 8081:80 netflix:latest
     sudo apt update
     sudo apt install fontconfig openjdk-21-jre
     java -version
-    
+    ```
+    ```
     #jenkins
     sudo wget -O /etc/apt/keyrings/jenkins-keyring.asc \
     https://pkg.jenkins.io/debian-stable/jenkins.io-2026.key
@@ -129,27 +130,27 @@ docker run -d --name netflix -p 8081:80 netflix:latest
 Goto Manage Jenkins →Plugins → Available Plugins →
 
 Install below plugins
-
+```
     Eclipse Temurin Installer
-
+```
     SonarQube Scanner
-
+```
     NodeJs Plugin
-
+```
     Email Extension Plugin
-
+```
+```
 ### **Configure Java and Nodejs in Global Tool Configuration**
-
+```
 Go to Manage Jenkins 
     → Tools 
         → Install jdk21 and node16
             → Click on Apply and Save
-
-
+```
 ### SonarQube
 
 Create the token
-
+```
 Goto Jenkins Dashboard 
     → Manage Jenkins 
         → Credentials 
@@ -157,7 +158,7 @@ Goto Jenkins Dashboard
                 → Global
                     → Add Secret Text  
                         → Secret = sqa_c054b6b34253271d5b8431cb79caa870044a3552 ID= sonar-token
-
+```
 Create a Jenkins webhook
 
 1. **Configure CI/CD Pipeline in Jenkins:**
@@ -237,11 +238,19 @@ Certainly, here are the instructions without step numbers:
     → "Manage Plugins."
 - Click on the "Available" tab and search for "Docker."
 - Check the following Docker-related plugins:
-  - Docker
-  - Docker Commons
-  - Docker Pipeline
-  - Docker API
-  - docker-build-step
+```
+
+Docker
+```
+docker-build-step
+```  
+Docker API
+```
+Docker Commons
+```
+Docker Pipeline
+```
+
 - Click on the "Install without restart" button to install these plugins.
 
 **Add DockerHub Credentials:**
