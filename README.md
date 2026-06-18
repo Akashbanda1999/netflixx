@@ -194,7 +194,7 @@ pipeline {
         }
         stage('Checkout from Git') {
             steps {
-                git branch: 'main', url: 'https://github.com/ratnadeepsali05/Netflix.git'
+                git branch: 'main', url: 'https://github.com/Akashbanda1999/Netflix.git'
             }
         }
         stage("Sonarqube Analysis") {
@@ -284,7 +284,7 @@ pipeline{
         }
         stage('Checkout from Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/ratnadeepsali05/Netflix.git'
+                git branch: 'main', url: 'https://github.com/Akashbanda1999/Netflix.git'
             }
         }
         stage("Sonarqube Analysis "){
